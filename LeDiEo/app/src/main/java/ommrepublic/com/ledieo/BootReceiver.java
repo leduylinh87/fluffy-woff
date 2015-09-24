@@ -14,8 +14,9 @@ public class BootReceiver extends BroadcastReceiver{
     public void onReceive(Context context, Intent intent) {
         // Do something, Hello World?
         // Here is my code which will start my MainActivity
-        Intent i = new Intent(context, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(i);
+        //Intent i = new Intent(context, MainActivity.class);
+        //i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //context.startActivity(i);
+        context.startService(new Intent(context, BootService.class));
     }
 }
