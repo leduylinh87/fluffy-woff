@@ -2,25 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.5.2/ecf534dba3a8446ce84cbb797d314763be212a68/glide-3.5.2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/glide-3.5.2-4b29a6cd16f65ea40c17376fb6ecd3188f150384.jar" />
-    </item>
-    <item
         jar="/Users/admin/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
         <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-299c134ebdc561b7b512c1a4a7edc53701d84ce4.jar" />
-    </item>
-    <item
-        jar="/Users/admin/Desktop/LeDiEo/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-612bc25b51bef3b90e29415cd3af25aa55d99464.jar" />
     </item>
     <item
         jar="/Users/admin/Desktop/LeDiEo/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
@@ -37,11 +23,18 @@
         <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/classes-8187651086bd6374a7e08c7e92bc956519a3b9e1.jar" />
     </item>
     <item
-        jar="/Users/admin/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.1/8453703164e230cce848b387f6b8c06f10a22d59/picasso-2.5.1.jar"
+        jar="/Users/admin/.gradle/caches/modules-2/files-2.1/cz.msebera.android/httpclient/4.4.1.1/c8d96f6fd2bcc179c312da33ee670a71188cc60d/httpclient-4.4.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="8453703164e230cce848b387f6b8c06f10a22d59">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/picasso-2.5.1-3f6bcd9518b80c3e5979d39d1198817000870ff4.jar" />
+        sha1="c8d96f6fd2bcc179c312da33ee670a71188cc60d">
+        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/httpclient-4.4.1.1-f9ff4d80b8c9b54cc6073bc507f3cac7296d1168.jar" />
+    </item>
+    <item
+        jar="/Users/admin/Desktop/LeDiEo/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-612bc25b51bef3b90e29415cd3af25aa55d99464.jar" />
     </item>
 
 </items>
