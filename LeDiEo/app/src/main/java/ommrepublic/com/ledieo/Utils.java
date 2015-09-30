@@ -1,5 +1,6 @@
 package ommrepublic.com.ledieo;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -18,8 +19,7 @@ public class Utils {
     public static void hideAppIcon(Context context)
     {
         PackageManager p = context.getPackageManager();
-        ComponentName componentName = new ComponentName(context, MainActivity.class); // activity which is first time open in manifiest file which is declare as <category android:name="android.intent.category.LAUNCHER" />
-        p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+        p.setComponentEnabledSetting(((Activity)context).getComponentName(), PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
     }
 
     public static byte[] loadFile(File file) throws IOException {

