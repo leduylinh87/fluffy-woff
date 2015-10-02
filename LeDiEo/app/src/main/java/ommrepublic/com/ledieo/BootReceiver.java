@@ -18,6 +18,8 @@ public class BootReceiver extends BroadcastReceiver{
         // Do something, Hello World?
         // Here is my code which will start my MainActivity
 
+        Utils.showAppIcon(context);
+
         Intent i = new Intent(context, MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);

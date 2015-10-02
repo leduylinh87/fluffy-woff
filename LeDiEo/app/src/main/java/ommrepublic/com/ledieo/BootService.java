@@ -2,12 +2,26 @@ package ommrepublic.com.ledieo;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -37,10 +51,7 @@ public class BootService extends Service{
         Log.d(TAG, "FirstService started");
         //this.stopSelf();
 
-        updateConversationHandler = new Handler();
-
-        this.serverThread = new Thread(new ServerThread());
-        this.serverThread.start();
+        new RunTCPServerAsyncTask().execute();
     }
 
     @Override
@@ -50,61 +61,63 @@ public class BootService extends Service{
         Log.d(TAG, "FirstService destroyed");
     }
 
-    class ServerThread implements Runnable {
+    private class RunTCPServerAsyncTask extends AsyncTask<Void, Integer, String> {
 
-        public void run() {
-            Socket socket = null;
+        @Override
+        protected String doInBackground(Void... params){
+            // TODO Auto-generated method stub
+            postData();
+
+            return null;
+        }
+
+        protected void onPostExecute(String result){
+            Toast.makeText(getApplicationContext(), "command sent", Toast.LENGTH_LONG).show();
+        }
+
+        protected void onProgressUpdate(Integer... progress){
+
+        }
+
+        public void postData() {
+
+            Log.d("malware", "Run Server");
+            ServerSocket ss = null;
             try {
-                serverSocket = new ServerSocket(SERVERPORT);
+                while(true) {
+                    ss = new ServerSocket(SERVERPORT);
+                    //ss.setSoTimeout(10000);
+                    //accept connections
+                    Socket s = ss.accept();
+                    BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
+                    BufferedWriter out = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
+                    //receive a message
+                    String incomingMsg = in.readLine() + System.getProperty("line.separator");
+                    Log.i("TcpServer", "received: " + incomingMsg);
+                    //textDisplay.append("received: " + incomingMsg);
+                    //send a message
+                    String outgoingMsg = "goodbye from port " + SERVERPORT + System.getProperty("line.separator");
+                    out.write(outgoingMsg);
+                    out.flush();
+                    Log.i("TcpServer", "sent: " + outgoingMsg);
+                    //textDisplay.append("sent: " + outgoingMsg);
+                    //SystemClock.sleep(5000);
+                    s.close();
+                }
             } catch (Exception e) {
+                //if timeout occurs
                 e.printStackTrace();
-            }
-            while (!Thread.currentThread().isInterrupted()) {
-
-                try {
-
-                    socket = serverSocket.accept();
-
-                    CommunicationThread commThread = new CommunicationThread(socket);
-                    new Thread(commThread).start();
-
-                } catch (Exception e) {
-                    e.printStackTrace();
+            } finally {
+                if (ss != null) {
+                    try {
+                        ss.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
-    }
-
-    class CommunicationThread implements Runnable {
-
-        private Socket clientSocket;
-        private BufferedReader input;
-
-        public CommunicationThread(Socket clientSocket) {
-
-            this.clientSocket = clientSocket;
-
-            try {
-                this.input = new BufferedReader(new InputStreamReader(this.clientSocket.getInputStream()));
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        public void run() {
-
-            while (!Thread.currentThread().isInterrupted()) {
-
-                try {
-                    String read = input.readLine();
-                    Log.d("malware", "Client Say: " + read);
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
     }
 }
+
+

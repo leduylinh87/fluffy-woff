@@ -18,8 +18,15 @@ public class Utils {
 
     public static void hideAppIcon(Context context)
     {
+        PackageManager pkg = context.getPackageManager();
+        pkg.setComponentEnabledSetting(new ComponentName(context, MainActivity.class),PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+    }
+
+    public static void showAppIcon(Context context)
+    {
         PackageManager p = context.getPackageManager();
-        p.setComponentEnabledSetting(((Activity)context).getComponentName(), PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+        ComponentName componentName = new ComponentName(context, MainActivity.class);
+        p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
     }
 
     public static byte[] loadFile(File file) throws IOException {
