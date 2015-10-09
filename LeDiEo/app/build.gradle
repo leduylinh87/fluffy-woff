@@ -32,4 +32,6 @@ dependencies {
         exclude module: 'httpclient'
     }
     compile 'org.apache.httpcomponents:httpclient-android:4.3.5'
+    compile files('libs/jtorctl-briar.jar')
+    compile 'org.slf4j:slf4j-android:1.7.12'
 }

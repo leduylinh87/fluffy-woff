@@ -1,16 +1,19 @@
 package ommrepublic.com.ledieo;
 
 import android.app.Activity;
-import android.content.pm.PackageManager;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.Socket;
+
 
 public class MainActivity extends Activity {
+
+    public boolean willTurnOffScreen = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

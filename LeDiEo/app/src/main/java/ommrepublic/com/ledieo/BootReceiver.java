@@ -1,11 +1,8 @@
 package ommrepublic.com.ledieo;
 
-import android.app.Activity;
-import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 /**
  * Created by admin on 9/23/15.
