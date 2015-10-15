@@ -43,6 +43,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.CountDownLatch;
 
+import ommrepublic.com.ledieo.Utils;
+
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 /**
@@ -316,6 +318,7 @@ public abstract class OnionProxyManager {
         // then Tor is dead. This assumes, of course, that takeOwnership works and we can't end up with Zombies.
         if (controlConnection != null) {
             LOG.info("Tor is already running");
+            Utils.setTorStatusText("Tor is already running");
             return true;
         }
 

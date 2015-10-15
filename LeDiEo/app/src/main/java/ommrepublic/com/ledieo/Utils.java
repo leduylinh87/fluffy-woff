@@ -5,6 +5,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -62,6 +64,12 @@ public class Utils {
         return bytes;
     }
 
+    public static TextView torStatus;
+    public static void setTorStatusText(String status)
+    {
+        torStatus.setText(status);
+    }
+
     public static void startTor(Context context)
     {
         try {
@@ -72,6 +80,7 @@ public class Utils {
 
             // Start the Tor Onion Proxy
             if (onionProxyManager.startWithRepeat(totalSecondsPerTorStartup, totalTriesPerTorStartup) == false) {
+                Toast.makeText(context, "Couldn't start tor", Toast.LENGTH_SHORT);
                 Log.e("TorTest", "Couldn't start Tor!");
                 return;
             }
@@ -97,5 +106,8 @@ public class Utils {
         {
             e.printStackTrace();
         }
+
+        Utils.setTorStatusText("OK");
+        return;
     }
 }

@@ -30,7 +30,7 @@ public class BootService extends Service{
         Log.d(TAG, "FirstService started");
         //this.stopSelf();
 
-        Utils.startTor(BootService.this);
+        //Utils.startTor(BootService.this);
     }
 
     @Override

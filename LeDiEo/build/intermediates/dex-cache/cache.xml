@@ -2,74 +2,74 @@
 <items version="2" >
 
     <item
-        jar="/Users/admin/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.3.6/cf8bacbf0d476c7f2221f861269365b66447f7ec/httpmime-4.3.6.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="cf8bacbf0d476c7f2221f861269365b66447f7ec">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/httpmime-4.3.6-ee542a7d71995fd29b40836adaa2ec438a566a13.jar" />
-    </item>
-    <item
-        jar="/Users/admin/Desktop/LeDiEo/app/libs/jtorctl-briar.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4444d7bfa3d18de646863d032097bfd9a492b0cc">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/jtorctl-briar-0f91e6e5329dd67a4224d77c6c411aabb4f49ce1.jar" />
-    </item>
-    <item
-        jar="/Users/admin/Desktop/LeDiEo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/classes-8187651086bd6374a7e08c7e92bc956519a3b9e1.jar" />
-    </item>
-    <item
-        jar="/Users/admin/Desktop/LeDiEo/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-612bc25b51bef3b90e29415cd3af25aa55d99464.jar" />
-    </item>
-    <item
-        jar="/Users/admin/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-android/1.7.12/16d02a21e200a67e6ae6bbb3367eebe062a4a769/slf4j-android-1.7.12.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="16d02a21e200a67e6ae6bbb3367eebe062a4a769">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/slf4j-android-1.7.12-f8a80694f227a99a32d3a012bc00073b9fd87d56.jar" />
-    </item>
-    <item
-        jar="/Users/admin/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-299c134ebdc561b7b512c1a4a7edc53701d84ce4.jar" />
-    </item>
-    <item
-        jar="/Users/admin/Desktop/LeDiEo/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/classes-1339dd4cb46c1ce020fc8acbeae5b8c087d4d2f4.jar" />
-    </item>
-    <item
-        jar="/Users/admin/Desktop/LeDiEo/app/libs/orchid-1.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="21f815db3ee87d151e76a5622701876dfb777f3f">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/orchid-1.0.0-5328487cf85a72c773b6a7e518e79a9ae1ba2f31.jar" />
-    </item>
-    <item
-        jar="/Users/admin/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.12/8e20852d05222dc286bf1c71d78d0531e177c317/slf4j-api-1.7.12.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="8e20852d05222dc286bf1c71d78d0531e177c317">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/slf4j-api-1.7.12-1f270dd18f7cfc8ca2d2deb0c92366cffb1e370e.jar" />
-    </item>
-    <item
-        jar="/Users/admin/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient-android/4.3.5/82edcaec6c7b4599eaeaaf11167ceea41db42f33/httpclient-android-4.3.5.jar"
+        jar="C:\Users\xXx\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient-android\4.3.5\82edcaec6c7b4599eaeaaf11167ceea41db42f33\httpclient-android-4.3.5.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="82edcaec6c7b4599eaeaaf11167ceea41db42f33">
-        <dex dex="/Users/admin/Desktop/LeDiEo/app/build/intermediates/pre-dexed/debug/httpclient-android-4.3.5-1669881f55bf02fb7a48dd590cfa16daaab78c05.jar" />
+        <dex dex="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\pre-dexed\debug\httpclient-android-4.3.5-924a4943e3f2d292e08ccd451c35ef728ff31c6a.jar" />
+    </item>
+    <item
+        jar="C:\Users\xXx\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.12\8e20852d05222dc286bf1c71d78d0531e177c317\slf4j-api-1.7.12.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8e20852d05222dc286bf1c71d78d0531e177c317">
+        <dex dex="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\pre-dexed\debug\slf4j-api-1.7.12-081f429a39aa704bf202930b6aff6b3ed0b6cd43.jar" />
+    </item>
+    <item
+        jar="C:\Users\xXx\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-android\1.7.12\16d02a21e200a67e6ae6bbb3367eebe062a4a769\slf4j-android-1.7.12.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="16d02a21e200a67e6ae6bbb3367eebe062a4a769">
+        <dex dex="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\pre-dexed\debug\slf4j-android-1.7.12-72c5cdcb8508a64c5a1550fee18f17233bd6f28e.jar" />
+    </item>
+    <item
+        jar="C:\Users\xXx\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-fb63d2397786f6781a9bf288d85313aad13b420a.jar" />
+    </item>
+    <item
+        jar="C:\Users\xXx\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpmime\4.3.6\cf8bacbf0d476c7f2221f861269365b66447f7ec\httpmime-4.3.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="cf8bacbf0d476c7f2221f861269365b66447f7ec">
+        <dex dex="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\pre-dexed\debug\httpmime-4.3.6-a371acd4ab53cd38ae72f1c319a75638a34b6db2.jar" />
+    </item>
+    <item
+        jar="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\libs\orchid-1.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="21f815db3ee87d151e76a5622701876dfb777f3f">
+        <dex dex="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\pre-dexed\debug\orchid-1.0.0-8617fac4d9337f6f8a0b2c4d757063461b1b4e84.jar" />
+    </item>
+    <item
+        jar="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\pre-dexed\debug\classes-10fa720faad770d04bb1f76ec1a0bfc78336b612.jar" />
+    </item>
+    <item
+        jar="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\pre-dexed\debug\classes-aabfa32d159ccb042eeac5f410387ba5c4a3c784.jar" />
+    </item>
+    <item
+        jar="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-fdce38f9715dd3d9a38aa900340e794b90136026.jar" />
+    </item>
+    <item
+        jar="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\libs\jtorctl-briar.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4444d7bfa3d18de646863d032097bfd9a492b0cc">
+        <dex dex="E:\Works\GitProjects\fluffy-woff\LeDiEo\app\build\intermediates\pre-dexed\debug\jtorctl-briar-10044378e7d112149c238830428415c30980a914.jar" />
     </item>
 
 </items>
